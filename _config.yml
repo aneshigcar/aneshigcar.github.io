@@ -16,9 +16,9 @@
 title: Anesh
 email: aneshigcar0001@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Hi! This is Anesh. Currently I am a reseacher cum scientist at IGCAR, kalapakkam. I am mostly interested in Theortical Condensed Matter Physics.
+  Hi! This is Anesh. Currently I am a reseacher cum scientist at IGCAR, kalapakkam. I am a part of Material Science Group at IGCAR. I am mostly interested in Theortical Condensed Matter Physics. C
 twitter_username: anesh41508166
-github_username: aneshigacr
+github_username: aneshigcar
 minimal_mistakes_skin: neon
 search: true
 
@@ -65,25 +65,25 @@ author:
       url: "https://"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://x.com/"
+      url: "https://x.com/anesh41508166"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
+      url: "https://github.com/aneshigcar"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://instagram.com/anesh_0001"
 
 footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+      url: "https://twitter.com/anesh41508166"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
+      url: "https://github.com/aneshigcar"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://instagram.com/anesh_0001"
 
 defaults:
   # _posts
