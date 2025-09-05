@@ -9,5 +9,5 @@ title: "Hobbies"
 
 - Learning is something I always strive to embrace. Whether it's picking up new photography techniques, reading about diverse subjects, or discovering something entirely new, I'm constantly eager to grow. I believe that the process of learning is endless, and it's this curiosity that fuels my desire to expand my knowledge. Whether it's through books, conversations, or hands-on experience, I find joy in discovering new things and applying them in creative ways. It's this passion for learning that keeps life exciting and full of possibilities.
 
- -My Int. BS MS Certificate
+ - My Int. BS MS Certificate
  <iframe src="https://drive.google.com/file/d/1xqsTPwdZ_nyNxDu_kt_0qjNLDJBH4Lwy/preview" width="640" height="480" allow="autoplay"></iframe>
