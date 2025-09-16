@@ -8,6 +8,3 @@ title: "Hobbies"
 - In addition to photography, reading novels is another one of my great passions. I love immersing myself in stories, exploring different cultures and worlds. One of the most profound books I've read is the *Shiva Trilogy*, which not only captivated me with its rich storytelling but also sparked deep reflections on spirituality and life. *Kokoro* by Natsume Sōseki is another favorite, its exploration of human emotions and relationships resonating with me deeply. Reading these novels is a form of escapism, yet it also offers new insights into the complexities of the human experience.
 
 - Learning is something I always strive to embrace. Whether it's picking up new photography techniques, reading about diverse subjects, or discovering something entirely new, I'm constantly eager to grow. I believe that the process of learning is endless, and it's this curiosity that fuels my desire to expand my knowledge. Whether it's through books, conversations, or hands-on experience, I find joy in discovering new things and applying them in creative ways. It's this passion for learning that keeps life exciting and full of possibilities.
-
- - My Int. BS MS Certificate
- <iframe src="https://drive.google.com/file/d/1xqsTPwdZ_nyNxDu_kt_0qjNLDJBH4Lwy/preview" width="640" height="480" allow="autoplay"></iframe>
