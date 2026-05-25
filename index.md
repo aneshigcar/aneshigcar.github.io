@@ -6,6 +6,6 @@ layout: single
 author_profile: true
 ---
 
-I am a **Reseacher** at Indira Gandhi Centre for Advaned Reseacher, kalapakkam, Tamilnadu, India, Pin-code: 603102. Recently graduated from BARC Training School, Mumbai. That was the 68th Training School, started by Great Indian Nuclear Physicist Dr. Homi Bhabha. I did My Int. BS MS from NIT Rourkela, Odisha in year 2023. My Main areas of Research is :
-- Theoritcal Condensed Matter Physics
-- Molecualar Dynamics Simulation
+I am a **Reseacher** at Indira Gandhi Centre for Atomic Research, kalapakkam, Tamilnadu, India, Pin-code: 603102. I have been graduated from 68th BARC Training School, Mumbai. My Main areas of Research is :
+- Qunatum Condensed Matter Physics
+- Material Modelling
