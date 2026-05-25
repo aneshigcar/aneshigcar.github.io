@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anesh | Researcher, IGCAR</title>
+  <meta name="description" content="Anesh — Researcher at IGCAR, Kalpakkam. Theoretical Condensed Matter Physics and Material Modelling." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sans: 'DM Sans', sans-serif;
+      --serif: 'EB Garamond', Georgia, serif;
+      --ink: #1a1a1a;
+      --ink2: #4a4a4a;
+      --ink3: #888;
+      --line: #e2dfd9;
+      --bg: #faf9f6;
+      --white: #fff;
+      --navy: #1a3a5c;
+      --navy-light: #e8eff7;
+      --navy-mid: #2d5a8a;
+      --tag-bg: #f0f4f8;
+      --tag-col: #2d5a8a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: rgba(250, 249, 246, 0.96);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 200;
+    }
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-family: var(--serif);
+      font-size: 20px;
+      color: var(--navy);
+      cursor: pointer;
+      user-select: none;
+      letter-spacing: -0.2px;
+    }
+    .nav-links { display: flex; gap: 0; flex-wrap: wrap; }
+    .nav-links button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--ink3);
+      padding: 6px 11px;
+      border-radius: 4px;
+      transition: all 0.18s;
+      letter-spacing: 0.1px;
+    }
+    .nav-links button:hover,
+    .nav-links button.active {
+      color: var(--navy);
+      background: var(--navy-light);
+    }
+
+    /* ── PAGES ── */
+    .page { display: none; max-width: 960px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+    .page.active { display: block; animation: fadeUp 0.38s ease both; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── SECTION HEADING ── */
+    .sec-head {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .sec-head::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+    .sec-sub { font-size: 13.5px; color: var(--ink3); margin-bottom: 1.6rem; font-style: italic; }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      font-size: 13px;
+      border-radius: 5px;
+      text-decoration: none;
+      border: 1px solid;
+      cursor: pointer;
+      font-family: var(--sans);
+      transition: all 0.18s;
+    }
+    .btn-primary { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .btn-primary:hover { background: #0f2640; border-color: #0f2640; }
+    .btn-ghost { background: transparent; color: var(--ink2); border-color: var(--line); }
+    .btn-ghost:hover { border-color: var(--navy); color: var(--navy); }
+
+    /* ── HOME ── */
+    .home-grid {
+      display: grid;
+      grid-template-columns: 1fr 210px;
+      gap: 3rem;
+      align-items: start;
+    }
+    .home-role {
+      font-size: 11.5px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--ink3);
+      margin-bottom: 0.7rem;
+    }
+    .home-name {
+      font-family: var(--serif);
+      font-size: 2.6rem;
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.18;
+      margin-bottom: 1rem;
+    }
+    .home-name span { font-size: 1.4rem; color: var(--ink2); font-style: italic; }
+    .home-bio { color: var(--ink2); font-size: 15px; line-height: 1.85; max-width: 520px; }
+    .home-btns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.4rem; }
+
+    .profile-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.5rem 1.2rem;
+      text-align: center;
+    }
+    .profile-avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: var(--navy-light);
+      border: 3px solid var(--navy-light);
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      color: var(--navy);
+      overflow: hidden;
+    }
+    .profile-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .profile-name { font-family: var(--serif); font-size: 16px; color: var(--ink); }
+    .profile-inst { font-size: 12px; color: var(--ink3); margin-top: 5px; line-height: 1.6; }
+    .profile-socials { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .profile-socials a {
+      font-size: 11.5px;
+      color: var(--ink3);
+      text-decoration: none;
+      padding: 4px 10px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      transition: all 0.18s;
+    }
+    .profile-socials a:hover { color: var(--navy); border-color: var(--navy); }
+
+    /* ── RESEARCH ── */
+    .research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .res-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 1.1rem 1.2rem;
+      transition: border-color 0.2s;
+    }
+    .res-card:hover { border-color: var(--navy-mid); }
+    .res-card h3 {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .res-card p { font-size: 13.5px; color: var(--ink2); line-height: 1.68; }
+
+    /* ── PUBLICATIONS ── */
+    .pub-list { display: flex; flex-direction: column; gap: 14px; }
+    .pub-item {
+      border-left: 3px solid var(--navy-light);
+      padding: 0.6rem 0 0.6rem 1.1rem;
+      transition: border-color 0.2s;
+    }
+    .pub-item:hover { border-left-color: var(--navy); }
+    .pub-title { font-size: 14.5px; color: var(--ink); font-weight: 500; line-height: 1.55; }
+    .pub-meta { font-size: 12.5px; color: var(--ink3); margin-top: 3px; }
+    .pub-meta em { color: var(--navy-mid); font-style: italic; }
+
+    /* ── CV ── */
+    .cv-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 1.4rem;
+    }
+    .cv-topbar p { font-size: 13.5px; color: var(--ink3); font-style: italic; }
+    .cv-actions { display: flex; gap: 8px; }
+    .cv-embed {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .cv-embed iframe { width: 100%; height: 800px; border: none; display: block; }
+    .cv-note {
+      background: var(--navy-light);
+      border: 1px solid #c5d8ec;
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      margin-top: 1.2rem;
+    }
+    .cv-note p { font-size: 13.5px; color: var(--navy-mid); line-height: 1.75; }
+    .cv-note code {
+      background: #d4e6f5;
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-family: monospace;
+      font-size: 12.5px;
+      color: var(--navy);
+    }
+
+    /* ── FUN READING ── */
+    .reading-intro {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.5rem;
+      font-size: 14px;
+      color: var(--ink2);
+      line-height: 1.75;
+    }
+    .reading-intro a { color: var(--navy); }
+    .reading-filter { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.4rem; }
+    .filter-btn {
+      font-size: 12px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink3);
+      cursor: pointer;
+      font-family: var(--sans);
+      transition: all 0.18s;
+    }
+    .filter-btn:hover, .filter-btn.on { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .reading-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .read-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 1rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .read-card:hover { border-color: var(--navy); box-shadow: 0 2px 14px rgba(26,58,92,0.08); }
+    .read-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--tag-col);
+      background: var(--tag-bg);
+      padding: 2px 9px;
+      border-radius: 3px;
+      width: fit-content;
+    }
+    .read-title { font-family: var(--serif); font-size: 1.05rem; color: var(--ink); line-height: 1.45; }
+    .read-source { font-size: 12px; color: var(--ink3); margin-top: auto; padding-top: 6px; border-top: 1px solid var(--line); }
+
+    /* ── HOBBIES ── */
+    .hobby-list { display: flex; flex-direction: column; gap: 14px; }
+    .hobby-item { display: flex; gap: 14px; align-items: flex-start; }
+    .hobby-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--navy); margin-top: 10px; flex-shrink: 0; }
+    .hobby-item p { font-size: 14.5px; color: var(--ink2); line-height: 1.78; }
+
+    /* ── CONTACT ── */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .contact-item { display: flex; gap: 12px; align-items: flex-start; }
+    .contact-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--navy-light);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-icon i { font-size: 17px; color: var(--navy); }
+    .contact-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--ink3); }
+    .contact-value { font-size: 14px; color: var(--ink); margin-top: 2px; line-height: 1.5; }
+    .contact-value a { color: var(--navy); text-decoration: none; }
+    .contact-value a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--line);
+      text-align: center;
+      padding: 1.5rem 2rem;
+      font-size: 12px;
+      color: var(--ink3);
+    }
+    footer a { color: var(--ink3); text-decoration: none; }
+    footer a:hover { color: var(--navy); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .home-grid { grid-template-columns: 1fr; }
+      .profile-card { max-width: 260px; }
+      .research-grid { grid-template-columns: 1fr; }
+      .reading-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .nav-links button { font-size: 12px; padding: 5px 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-brand" onclick="showPage('home')">Anesh</span>
+    <div class="nav-links">
+      <button onclick="showPage('home')"         id="nav-home"         class="active">Home</button>
+      <button onclick="showPage('research')"     id="nav-research">Research</button>
+      <button onclick="showPage('publications')" id="nav-publications">Publications</button>
+      <button onclick="showPage('cv')"           id="nav-cv">CV</button>
+      <button onclick="showPage('reading')"      id="nav-reading">Fun &amp; Popular Reading</button>
+      <button onclick="showPage('hobbies')"      id="nav-hobbies">Hobbies</button>
+      <button onclick="showPage('contact')"      id="nav-contact">Contact</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HOME ═══ -->
+<div class="page active" id="page-home">
+  <div class="home-grid">
+    <div>
+      <div class="home-role">Researcher &middot; IGCAR, Kalpakkam &middot; Tamil Nadu, India</div>
+      <h1 class="home-name">
+        Anesh<br>
+        <span>Theoretical Condensed Matter Physics</span>
+      </h1>
+      <p class="home-bio">
+        Researcher at Indira Gandhi Centre for Atomic Research (IGCAR), Kalpakkam.
+        Graduate of the 68th BARC Training School, Mumbai. My work spans
+        Quantum Condensed Matter Physics and Material Modelling, with a focus
+        on theoretical and computational approaches to nuclear materials.
+      </p>
+      <div class="home-btns">
+        <button class="btn btn-primary" onclick="showPage('cv')">
+          <i class="ti ti-file-text"></i> View CV
+        </button>
+        <a href="https://github.com/aneshigcar" class="btn btn-ghost" target="_blank" rel="noopener">
+          <i class="ti ti-brand-github"></i> GitHub
+        </a>
+        <a href="https://x.com/anesh41508166" class="btn btn-ghost" target="_blank" rel="noopener">
+          <i class="ti ti-brand-twitter"></i> Twitter
+        </a>
+        <a href="mailto:aneshigcar0001@gmail.com" class="btn btn-ghost">
+          <i class="ti ti-mail"></i> Email
+        </a>
+      </div>
+    </div>
+    <div class="profile-card">
+      <!--
+        PHOTO: Replace "assets/images/anesh.jpg" with your actual photo path.
+        If no photo, the initials "A" will show automatically.
+      -->
+      <div class="profile-avatar">
+        <img src="assets/images/anesh.jpg" alt="Anesh"
+             onerror="this.style.display='none'; this.parentElement.innerHTML='A';" />
+      </div>
+      <div class="profile-name">Anesh</div>
+      <div class="profile-inst">
+        IGCAR, Kalpakkam<br>
+        Tamil Nadu &mdash; 603 102<br>
+        India
+      </div>
+      <div class="profile-socials">
+        <a href="mailto:aneshigcar0001@gmail.com">Email</a>
+        <a href="https://github.com/aneshigcar" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://instagram.com/anesh_0001" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ RESEARCH ═══ -->
+<div class="page" id="page-research">
+  <h2 class="sec-head">Research Areas</h2>
+  <p class="sec-sub">My primary focus lies in theoretical and computational approaches to quantum materials.</p>
+  <div class="research-grid">
+    <div class="res-card">
+      <h3><i class="ti ti-atom" style="font-size:15px; color:var(--navy);"></i> Quantum Condensed Matter</h3>
+      <p>Exploring quantum phenomena in many-body systems, strongly correlated electrons, and emergent quantum phases of matter.</p>
+    </div>
+    <div class="res-card">
+      <h3><i class="ti ti-cpu" style="font-size:15px; color:var(--navy);"></i> Material Modelling</h3>
+      <p>First-principles and computational approaches to understand the structural, electronic, and magnetic properties of materials.</p>
+    </div>
+    <div class="res-card">
+      <h3><i class="ti ti-wave-sine" style="font-size:15px; color:var(--navy);"></i> Theoretical Methods</h3>
+      <p>Development and application of analytical and numerical techniques for condensed matter problems relevant to nuclear environments.</p>
+    </div>
+    <div class="res-card">
+      <h3><i class="ti ti-flask" style="font-size:15px; color:var(--navy);"></i> Nuclear Materials</h3>
+      <p>Studying radiation effects, defect physics, and thermodynamic stability of materials in reactor-relevant environments at IGCAR.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PUBLICATIONS ═══ -->
+<div class="page" id="page-publications">
+  <h2 class="sec-head">Publications</h2>
+  <p class="sec-sub">Replace the entries below with your actual paper titles, journals, and links.</p>
+  <div class="pub-list">
+
+    <!-- COPY THIS BLOCK FOR EACH PAPER -->
+    <div class="pub-item">
+      <div class="pub-title">Your first paper title here</div>
+      <div class="pub-meta">Anesh et al. &middot; <em>Physical Review B</em>, Vol. X, 2024</div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">Your second paper title here</div>
+      <div class="pub-meta">Anesh et al. &middot; <em>Journal of Nuclear Materials</em>, Vol. X, 2023</div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">Your third paper title here</div>
+      <div class="pub-meta">Anesh et al. &middot; <em>Journal of Physics: Condensed Matter</em>, 2022</div>
+    </div>
+    <!-- END COPY BLOCK -->
+
+  </div>
+</div>
+
+<!-- ═══ CV ═══ -->
+<div class="page" id="page-cv">
+  <h2 class="sec-head">Curriculum Vitae</h2>
+  <div class="cv-topbar">
+    <p>Your CV is embedded below. Use the buttons to download or open in a new tab.</p>
+    <div class="cv-actions">
+      <!--
+        IMPORTANT: Change "assets/cv.pdf" to the actual path of your CV in your repo.
+        See instructions below.
+      -->
+      <a href="assets/cv.pdf" download="Anesh_CV.pdf" class="btn btn-primary">
+        <i class="ti ti-download"></i> Download CV
+      </a>
+      <a href="assets/cv.pdf" target="_blank" rel="noopener" class="btn btn-ghost">
+        <i class="ti ti-external-link"></i> Open in new tab
+      </a>
+    </div>
+  </div>
+
+  <div class="cv-embed">
+    <!--
+      The iframe below will display your PDF directly in the page.
+      Path: assets/cv.pdf — make sure your file is placed there.
+    -->
+    <iframe
+      src="assets/cv.pdf"
+      title="Anesh Curriculum Vitae"
+      aria-label="Embedded CV PDF viewer">
+    </iframe>
+  </div>
+
+  <div class="cv-note">
+    <p>
+      <strong>How to upload your CV:</strong><br>
+      1. Save your CV as <code>cv.pdf</code><br>
+      2. Place it inside the <code>assets/</code> folder in your GitHub repo<br>
+      3. Commit and push &mdash; it will appear here automatically as a PDF viewer with download and open buttons.
+    </p>
+  </div>
+</div>
+
+<!-- ═══ FUN & POPULAR READING ═══ -->
+<div class="page" id="page-reading">
+  <h2 class="sec-head">Fun &amp; Popular Reading</h2>
+  <div class="reading-intro">
+    <strong>For a weekend read over a cup of chai &#9749;</strong><br>
+    A curated list of popular science articles &mdash; on quantum physics, materials, and the everyday world around us.
+    Inspired by the wonderful outreach work of
+    <a href="https://sites.google.com/view/stuffaroundus/fun-popular-reading" target="_blank" rel="noopener">QuantStuff@IITK</a>.
+    Click any card to read the article.
+  </div>
+
+  <div class="reading-filter">
+    <button class="filter-btn on" onclick="filterReading('all', this)">All</button>
+    <button class="filter-btn" onclick="filterReading('quantum', this)">Quantum Physics</button>
+    <button class="filter-btn" onclick="filterReading('materials', this)">Materials</button>
+    <button class="filter-btn" onclick="filterReading('everyday', this)">Everyday Physics</button>
+  </div>
+
+  <div class="reading-grid" id="reading-grid">
+
+    <!-- QUANTUM -->
+    <a class="read-card" href="https://www.thehindu.com/sci-tech/science/fermi-energy-copper-quantum-physics-explained/article66845396.ece" target="_blank" rel="noopener" data-cat="quantum">
+      <span class="read-tag"><i class="ti ti-atom" style="font-size:11px;"></i> Quantum Physics</span>
+      <div class="read-title">Can you spot the quantum physics around your house?</div>
+      <div class="read-source">The Hindu &middot; 2023</div>
+    </a>
+
+    <a class="read-card" href="https://www.thehindu.com/sci-tech/science/kulhad-chai-bubbles-viscosity-superfluid-helium/article67629720.ece" target="_blank" rel="noopener" data-cat="quantum">
+      <span class="read-tag"><i class="ti ti-atom" style="font-size:11px;"></i> Quantum Physics</span>
+      <div class="read-title">Next time you have kulhad chai, don't miss the bubbly physics</div>
+      <div class="read-source">The Hindu &middot; 2023</div>
+    </a>
+
+    <a class="read-card" href="https://www.thehindu.com/sci-tech/science/how-diapers-use-quantum-physics-to-attend-to-natures-call-explained/article68300042.ece" target="_blank" rel="noopener" data-cat="quantum">
+      <span class="read-tag"><i class="ti ti-atom" style="font-size:11px;"></i> Quantum Physics</span>
+      <div class="read-title">How diapers use quantum physics to attend to nature's call</div>
+      <div class="read-source">The Hindu &middot; 2024</div>
+    </a>
+
+    <a class="read-card" href="https://www.thehindu.com/sci-tech/science/from-light-waves-to-quantum-physics-the-science-behind-smart-washbasins/article70884496.ece" target="_blank" rel="noopener" data-cat="quantum">
+      <span class="read-tag"><i class="ti ti-atom" style="font-size:11px;"></i> Quantum Physics</span>
+      <div class="read-title">From light waves to quantum physics: the science behind smart washbasins</div>
+      <div class="read-source">The Hindu &middot; 2026</div>
+    </a>
+
+    <!-- MATERIALS -->
+    <a class="read-card" href="https://www.thehindu.com/sci-tech/science/brass-alloy-copper-zinc-properties/article66899696.ece" target="_blank" rel="noopener" data-cat="materials">
+      <span class="read-tag"><i class="ti ti-layers" style="font-size:11px;"></i> Materials</span>
+      <div class="read-title">Brass is copper and zinc, but better. How?</div>
+      <div class="read-source">The Hindu &middot; 2023</div>
+    </a>
+
+    <a class="read-card" href="https://www.thehindu.com/sci-tech/science/iron-press-clothes-wrinkles-textile-polymer-physics/article67070455.ece" target="_blank" rel="noopener" data-cat="materials">
+      <span class="read-tag"><i class="ti ti-layers" style="font-size:11px;"></i> Materials</span>
+      <div class="read-title">A story of a convocation, an iron press, my kurta, and its polymers</div>
+      <div class="read-source">The Hindu &middot; 2023</div>
+    </a>
+
+    <a class="read-card" href="https://www.thehindu.com/sci-tech/science/if-diamonds-and-pencils-are-made-out-of-carbon-how-is-it-that-pencils-can-write/article68886241.ece" target="_blank" rel="noopener" data-cat="materials">
+      <span class="read-tag"><i class="ti ti-layers" style="font-size:11px;"></i> Materials</span>
+      <div class="read-title">If diamonds and pencils are both carbon, how do pencils write?</div>
+      <div class="read-source">The Hindu &middot; 2024</div>
+    </a>
+
+    <a class="read-card" href="https://www.thehindu.com/sci-tech/science/how-does-glue-work-the-physics-of-what-makes-glue-so-sticky/article70080501.ece" target="_blank" rel="noopener" data-cat="materials">
+      <span class="read-tag"><i class="ti ti-layers" style="font-size:11px;"></i> Materials</span>
+      <div class="read-title">How does glue work? The physics of what makes glue so sticky</div>
+      <div class="read-source">The Hindu &middot; 2025</div>
+    </a>
+
+    <!-- EVERYDAY -->
+    <a class="read-card" href="https://www.thehindu.com/sci-tech/science/friction-physics-dosa-pan-newton-laws-superconductivity/article67288213.ece" target="_blank" rel="noopener" data-cat="everyday">
+      <span class="read-tag"><i class="ti ti-bulb" style="font-size:11px;"></i> Everyday Physics</span>
+      <div class="read-title">The physics of friction, the 'necessary evil' that bedevils daily life</div>
+      <div class="read-source">The Hindu &middot; 2023</div>
+    </a>
+
+    <a class="read-card" href="https://www.thehindu.com/sci-tech/science/piezoelectric-materials-kitchen-stove-lighter-electronic-physics/article67014248.ece" target="_blank" rel="noopener" data-cat="everyday">
+      <span class="read-tag"><i class="ti ti-bulb" style="font-size:11px;"></i> Everyday Physics</span>
+      <div class="read-title">There was lightning in your kitchen today. Did you see?</div>
+      <div class="read-source">The Hindu &middot; 2023</div>
+    </a>
+
+    <a class="read-card" href="https://www.thehindu.com/sci-tech/science/how-do-mosquito-bats-work-explained/article68042488.ece" target="_blank" rel="noopener" data-cat="everyday">
+      <span class="read-tag"><i class="ti ti-bulb" style="font-size:11px;"></i> Everyday Physics</span>
+      <div class="read-title">How do mosquito bats work?</div>
+      <div class="read-source">The Hindu &middot; 2024</div>
+    </a>
+
+    <a class="read-card" href="https://www.thehindu.com/sci-tech/science/glass-transparency-physics-explained/article67701897.ece" target="_blank" rel="noopener" data-cat="everyday">
+      <span class="read-tag"><i class="ti ti-bulb" style="font-size:11px;"></i> Everyday Physics</span>
+      <div class="read-title">The physics that lets you forget your glasses are on your face</div>
+      <div class="read-source">The Hindu &middot; 2024</div>
+    </a>
+
+    <!-- ADD MORE CARDS HERE — copy a .read-card block above -->
+
+  </div>
+</div>
+
+<!-- ═══ HOBBIES ═══ -->
+<div class="page" id="page-hobbies">
+  <h2 class="sec-head">Hobbies &amp; Interests</h2>
+  <div class="hobby-list">
+    <div class="hobby-item">
+      <div class="hobby-dot"></div>
+      <p>
+        <strong style="color:var(--ink); font-weight:500;">Photography</strong> &mdash;
+        Capturing moments through a lens has been a long-standing passion. From nature and portraits
+        to urban landscapes, photography is a way to see the world from new perspectives and express
+        creativity and emotion through each frame.
+      </p>
+    </div>
+    <div class="hobby-item">
+      <div class="hobby-dot"></div>
+      <p>
+        <strong style="color:var(--ink); font-weight:500;">Reading novels</strong> &mdash;
+        Deeply drawn to literary fiction and philosophical novels. The <em>Shiva Trilogy</em> sparked
+        deep reflections on spirituality and history, while <em>Kokoro</em> by Natsume S&#x14D;seki
+        resonated with its exploration of human emotion and relationships.
+      </p>
+    </div>
+    <div class="hobby-item">
+      <div class="hobby-dot"></div>
+      <p>
+        <strong style="color:var(--ink); font-weight:500;">Lifelong learning</strong> &mdash;
+        Whether through books, conversations, or hands-on exploration, curiosity and the joy of
+        discovering something new is a constant driving force &mdash; from new photography techniques
+        to entirely unfamiliar subjects.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CONTACT ═══ -->
+<div class="page" id="page-contact">
+  <h2 class="sec-head">Contact</h2>
+  <p class="sec-sub">Feel free to reach out for research discussions, collaborations, or a conversation about physics.</p>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <div class="contact-icon"><i class="ti ti-mail"></i></div>
+      <div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value"><a href="mailto:aneshigcar0001@gmail.com">aneshigcar0001@gmail.com</a></div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon"><i class="ti ti-map-pin"></i></div>
+      <div>
+        <div class="contact-label">Location</div>
+        <div class="contact-value">IGCAR, Kalpakkam<br>Tamil Nadu &mdash; 603 102, India</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon"><i class="ti ti-brand-github"></i></div>
+      <div>
+        <div class="contact-label">GitHub</div>
+        <div class="contact-value"><a href="https://github.com/aneshigcar" target="_blank" rel="noopener">github.com/aneshigcar</a></div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon"><i class="ti ti-brand-twitter"></i></div>
+      <div>
+        <div class="contact-label">Twitter / X</div>
+        <div class="contact-value"><a href="https://x.com/anesh41508166" target="_blank" rel="noopener">@anesh41508166</a></div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon"><i class="ti ti-brand-instagram"></i></div>
+      <div>
+        <div class="contact-label">Instagram</div>
+        <div class="contact-value"><a href="https://instagram.com/anesh_0001" target="_blank" rel="noopener">@anesh_0001</a></div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon"><i class="ti ti-school"></i></div>
+      <div>
+        <div class="contact-label">Training</div>
+        <div class="contact-value">68th BARC Training School<br>Mumbai, India</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <p>
+    &copy; 2025 Anesh &nbsp;&middot;&nbsp; IGCAR, Kalpakkam
+    &nbsp;&middot;&nbsp;
+    <a href="https://github.com/aneshigcar" target="_blank" rel="noopener">GitHub</a>
+    &nbsp;&middot;&nbsp;
+    <a href="mailto:aneshigcar0001@gmail.com">Contact</a>
+  </p>
+</footer>
+
+<!-- ═══ JAVASCRIPT ═══ -->
+<script>
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
+    document.getElementById('page-' + id).classList.add('active');
+    document.getElementById('nav-' + id).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function filterReading(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    document.querySelectorAll('.read-card').forEach(card => {
+      card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'flex' : 'none';
+    });
+  }
+</script>
+
+</body>
+</html>
